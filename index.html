@@ -206,18 +206,16 @@
             >
               Get Started Now
             </button>
-            <a
-              href="https://www.youtube.com/watch?v=ZcexWVn9KQw"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onclick="document.getElementById('videoModal').classList.remove('hidden')"
               class="bg-white text-gray-700 px-8 py-3 rounded-lg border border-gray-300 hover:border-blue-600 transition font-medium"
             >
               ▶ Watch Demo
-            </a>
+            </button>
           </div>
           <div class="grid grid-cols-3 gap-8 animate-fadeInUp delay-300">
             <div>
-              <div class="text-3xl font-bold text-gray-900">5000+</div>
+              <div class="text-3xl font-bold text-gray-900">170000+</div>
               <div class="text-gray-600 text-sm">Students</div>
             </div>
             <div>
@@ -225,7 +223,7 @@
               <div class="text-gray-600 text-sm">Job Placement</div>
             </div>
             <div>
-              <div class="text-3xl font-bold text-gray-900">4.9/5</div>
+              <div class="text-3xl font-bold text-gray-900">4.7/5</div>
               <div class="text-gray-600 text-sm">Student Rating</div>
             </div>
           </div>
@@ -239,6 +237,50 @@
         </div>
       </div>
     </section>
+
+    <!-- Video Modal - Moved outside section for proper centering -->
+    <div
+      id="videoModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4"
+      onclick="if(event.target === this) { this.classList.add('hidden'); document.getElementById('videoFrame').src = document.getElementById('videoFrame').src; }"
+    >
+      <div
+        class="relative w-full max-w-5xl bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
+      >
+        <!-- Close Button -->
+        <button
+          onclick="document.getElementById('videoModal').classList.add('hidden'); document.getElementById('videoFrame').src = document.getElementById('videoFrame').src"
+          class="absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full w-10 h-10 flex items-center justify-center transition backdrop-blur-sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <!-- Video Container -->
+        <div class="relative" style="padding-bottom: 56.25%">
+          <iframe
+            id="videoFrame"
+            class="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/ZcexWVn9KQw"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
 
     <!-- Featured Courses -->
     <section class="bg-white py-20">
@@ -268,21 +310,21 @@
                   class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-medium"
                   >Beginner</span
                 >
-                <span class="text-gray-500 text-sm">6 weeks</span>
+                <span class="text-gray-500 text-sm">16.5 hrs</span>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Fundamentals of Embedded Systems
+                Mastering Microcontroller and Embedded Driver Development
               </h3>
               <p class="text-gray-600 text-sm mb-4">
-                Learn the basics of embedded systems, microcontrollers, and
-                programming fundamentals with hands-on Arduino projects.
+                (MCU1) Learn bare metal driver development using Embedded C:
+                Writing drivers for STM32 GPIO,I2C,SPI,USART from scratch
               </p>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center">
                   <span class="text-yellow-400">★★★★★</span>
                   <span class="text-gray-600 text-sm ml-2">(4.8)</span>
                 </div>
-                <span class="text-2xl font-bold text-blue-600">Rs. 199</span>
+                <span class="text-2xl font-bold text-blue-600">Rs. 529</span>
               </div>
               <button
                 class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium btn-hover"
@@ -306,21 +348,21 @@
                   class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium"
                   >Intermediate</span
                 >
-                <span class="text-gray-500 text-sm">8 weeks</span>
+                <span class="text-gray-500 text-sm">21.5 hrs</span>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Advanced ARM Cortex Programming
+                Mastering Microcontroller: Timers, PWM, CAN, Low Power(MCU2)
               </h3>
               <p class="text-gray-600 text-sm mb-4">
-                Deep dive into ARM Cortex-M microcontrollers, optimization, and
-                performance tuning.
+                Learn STM32 Timers, CAN, RTC, PWM, Low Power embedded systems
+                and program them using STM32 Device HAL APIs step by step.
               </p>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center">
                   <span class="text-yellow-400">★★★★★</span>
                   <span class="text-gray-600 text-sm ml-2">(4.9)</span>
                 </div>
-                <span class="text-2xl font-bold text-blue-600">Rs. 299</span>
+                <span class="text-2xl font-bold text-blue-600">Rs. 569</span>
               </div>
               <button
                 class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium btn-hover"
@@ -344,21 +386,21 @@
                   class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium"
                   >Advanced</span
                 >
-                <span class="text-gray-500 text-sm">10 weeks</span>
+                <span class="text-gray-500 text-sm">14.5 hrs</span>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-2">
-                IoT and Wireless Communication
+                Mastering RTOS: Hands on FreeRTOS and STM32Fx with Debugging
               </h3>
               <p class="text-gray-600 text-sm mb-4">
-                Build complete IoT solutions with wireless protocols, cloud
-                integration, and real-world industrial applications.
+                Learn Running/Porting FreeRTOS Real Time Operating System on
+                STM32F4x and ARM cortex M based Mircocontrollers
               </p>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center">
                   <span class="text-yellow-400">★★★★★</span>
                   <span class="text-gray-600 text-sm ml-2">(4.9)</span>
                 </div>
-                <span class="text-2xl font-bold text-blue-600">Rs 399</span>
+                <span class="text-2xl font-bold text-blue-600">Rs 569</span>
               </div>
               <button
                 class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium btn-hover"
@@ -583,21 +625,18 @@
           >
             <div class="flex text-yellow-400 mb-4">★★★★★</div>
             <p class="text-gray-700 mb-6">
-              "This course exceeded my expectations! The hands-on projects were
-              incredibly valuable, and I learned so much about embedded systems.
-              The instructors are top-notch."
+              "Excellent Course which explains the driver development for GPIO ,
+              SPI ,I2C and UART from Scratch."
             </p>
             <div class="flex items-center">
               <div
                 class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-3"
               >
-                SJ
+                AB
               </div>
               <div>
-                <div class="font-bold text-gray-900">Sarah Johnson</div>
-                <div class="text-sm text-gray-600">
-                  IoT Engineer at Tech Corp
-                </div>
+                <div class="font-bold text-gray-900">Akhilesh B.</div>
+                <div class="text-sm text-gray-600">Student</div>
               </div>
             </div>
           </div>
@@ -607,21 +646,18 @@
           >
             <div class="flex text-yellow-400 mb-4">★★★★★</div>
             <p class="text-gray-700 mb-6">
-              "Outstanding curriculum! I went from knowing nothing about
-              microcontrollers to building my own IoT devices. The support from
-              instructors was amazing."
+              "I'm very pleased with the course. It met my expectations and, as
+              always, opened up new avenues and questions. Thank you very much."
             </p>
             <div class="flex items-center">
               <div
                 class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-3"
               >
-                MR
+                LP
               </div>
               <div>
-                <div class="font-bold text-gray-900">Miguel Rodriguez</div>
-                <div class="text-sm text-gray-600">
-                  Embedded Systems Developer
-                </div>
+                <div class="font-bold text-gray-900">Leon P.</div>
+                <div class="text-sm text-gray-600">Student</div>
               </div>
             </div>
           </div>
@@ -631,19 +667,19 @@
           >
             <div class="flex text-yellow-400 mb-4">★★★★★</div>
             <p class="text-gray-700 mb-6">
-              "Best investment in my career! The practical approach and
-              real-world projects helped me land my dream job as an embedded
-              engineer. Highly recommend!"
+              "This is a great course for register level programming. The course
+              content is awesome. Trainer has covered many tricky examples &
+              debugging tips to understand concept clearly."
             </p>
             <div class="flex items-center">
               <div
                 class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-3"
               >
-                EP
+                JC
               </div>
               <div>
-                <div class="font-bold text-gray-900">Emily Parker</div>
-                <div class="text-sm text-gray-600">Hardware Engineer</div>
+                <div class="font-bold text-gray-900">Jaydip C.</div>
+                <div class="text-sm text-gray-600">Student</div>
               </div>
             </div>
           </div>
@@ -653,19 +689,19 @@
           >
             <div class="flex text-yellow-400 mb-4">★★★★★</div>
             <p class="text-gray-700 mb-6">
-              "The quality of instruction is phenomenal. Complex concepts are
-              explained clearly, and the hands-on labs really solidified my
-              understanding."
+              "The course gave me a clear, hands-on understanding of GPIO, SPI,
+              I2C, and USART. Working through the examples really boosted my
+              confidence with embedded systems. Highly recommended!"
             </p>
             <div class="flex items-center">
               <div
                 class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold mr-3"
               >
-                JC
+                RC
               </div>
               <div>
-                <div class="font-bold text-gray-900">James Chen</div>
-                <div class="text-sm text-gray-600">Firmware Developer</div>
+                <div class="font-bold text-gray-900">Rushabh C.</div>
+                <div class="text-sm text-gray-600">Student</div>
               </div>
             </div>
           </div>
@@ -675,20 +711,18 @@
           >
             <div class="flex text-yellow-400 mb-4">★★★★★</div>
             <p class="text-gray-700 mb-6">
-              "Incredible course structure! I appreciated the step-by-step
-              approach and the real industry insights. Worth every penny!"
+              "This course is highly informative and greatly enhances knowledge
+              in embedded systems."
             </p>
             <div class="flex items-center">
               <div
                 class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mr-3"
               >
-                AP
+                RK
               </div>
               <div>
-                <div class="font-bold text-gray-900">Aisha Patel</div>
-                <div class="text-sm text-gray-600">
-                  Senior Engineer at AutoTech
-                </div>
+                <div class="font-bold text-gray-900">Rahman Khandoker</div>
+                <div class="text-sm text-gray-600">Student</div>
               </div>
             </div>
           </div>
@@ -698,19 +732,18 @@
           >
             <div class="flex text-yellow-400 mb-4">★★★★★</div>
             <p class="text-gray-700 mb-6">
-              "The career guidance and mentorship made all the difference. I not
-              only learned embedded systems but also how to build a successful
-              career."
+              "These courses, MCU1 and MCU2 are the best courses and a wonderful
+              source for expanding the knowledge of embedded systems."
             </p>
             <div class="flex items-center">
               <div
                 class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold mr-3"
               >
-                DM
+                DH
               </div>
               <div>
-                <div class="font-bold text-gray-900">David Miller</div>
-                <div class="text-sm text-gray-600">Robotics Engineer</div>
+                <div class="font-bold text-gray-900">Dhruv H. S.</div>
+                <div class="text-sm text-gray-600">Student</div>
               </div>
             </div>
           </div>
@@ -750,11 +783,11 @@
             />
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Building Your First Microcontroller Project
+                Master The Rust Programming Language : Beginner To Advanced
               </h3>
               <p class="text-gray-600 text-sm mb-4">
-                Watch as we guide you through creating your first embedded
-                system from scratch with Arduino
+                Learn Rust(Latest Edition) programming step by step with
+                hands-on exercises, from basics to advanced levels.
               </p>
               <div class="flex items-center text-gray-500 text-sm">
                 <svg
@@ -769,7 +802,7 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-                <span>2.5k views</span>
+                <span>3052 learners</span>
               </div>
             </div>
           </div>
@@ -784,11 +817,11 @@
             />
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Advanced PCB Design Walkthrough
+                Microcontroller Embedded C Programming: Absolute Beginners
               </h3>
               <p class="text-gray-600 text-sm mb-4">
-                Learn how to design professional circuit boards with real-time
-                feedback and best practices
+                Foundation course on Embedded C programming using STM32
+                Microcontroller
               </p>
               <div class="flex items-center text-gray-500 text-sm">
                 <svg
@@ -803,7 +836,7 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-                <span>3.2k views</span>
+                <span>69.1k learners</span>
               </div>
             </div>
           </div>
@@ -818,11 +851,10 @@
             />
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2">
-                IoT Device Communication Basics
+                Embedded Systems Bootcamp: Learn by Building Projects
               </h3>
               <p class="text-gray-600 text-sm mb-4">
-                See how to connect devices to the cloud and implement wireless
-                communication protocols
+                Build real world embedded system projects
               </p>
               <div class="flex items-center text-gray-500 text-sm">
                 <svg
@@ -837,7 +869,7 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-                <span>4.1k views</span>
+                <span>2k learners</span>
               </div>
             </div>
           </div>
